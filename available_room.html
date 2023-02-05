@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="available_room.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="available_room.js"> </script>
+    <script src="https://use.fontawesome.com/b23b74413a.js"></script>
+
+
+
+</head>
+
+<body>
+    <div id="page">
+        <nav>
+        <p class="navtext"> Main</p>
+        
+        <ul class="nav_links">
+            <li><a href="admin_index.html"> Dashboard</a></li>
+            <br>
+            <li><a href="stud_list.html">Student List</a></li>
+            <br>
+            <li><a href="cleaner.html">Cleaner Schedule</a></li>
+            <br>
+            <li><a href="available_room.html">Room Availability</a></li>
+            <br>  
+    
+        </ul>
+        
+
+        <!-- <p class="navtext"> Hostels</p>
+        
+        <ul class="nav_links">
+            <li><a href="">Hostel List</a></li>
+            <br>
+            <li><a href="">Room Allocation</a></li>
+        </ul> -->
+        
+
+
+    </nav>
+    <main>
+        <div id="top_nav">
+            <img id="nav_icon" src="navigation-bar.png">
+            <p>random</p>
+            <img id="user_icon" src="user.png">
+        </div>
+        <div id="content">
+            <h2>Room Availability</h2>
+            <section id="info_boxes">
+                <div class="info">
+                    <span class="head"> Nicole Hostel</span>
+                    <span class="details">Deets</span>
+                    <span class="bottom"> See Avalability
+                        <!-- <span><i class="fa-regular fa-caret-down"></i></span> -->
+                        <span><a href="#" onclick= 'showTable(1)'><img id="arrow" src="down_arrow.png"></a></span>
+
+                    </span>
+                </div>
+                <div class="info">
+                    <span class="head"> Jordan Hostel</span>
+                    <span class="details">Deets</span>
+                    <span class="bottom"> See Avalability
+                        <span><a href="#" onclick= 'showTable(2)'><img id="arrow" src="down_arrow.png"></a></span>
+
+                    </span>
+                    
+                </div>
+                <div class="info">
+                    <span class="head"> Leanne Hostel</span>
+                    <span class="details">Deets</span>
+                    <span class="bottom"> See Avalability
+                        <span><a href="#" onclick= 'showTable(3)'><img id="arrow" src="down_arrow.png"></a></span>
+                    </span>
+
+                    
+                </div>
+                <div class="info">
+                    <span class="head"> Adelle Hostel</span>
+                    <span class="details">Deets</span>
+                    <span class="bottom"> See Avalability
+                       <a href="#" onclick= 'showTable(4)'><img id="arrow" src="down_arrow.png"></a>
+                    </span>
+    
+                </div>
+            </section>
+            <section>
+                <table id="table1" class="display" width="100%">
+                    <caption><h3>Nicole Hostel</h3></caption>
+                    <thead>
+                        <tr>
+                        <th>Room</th>
+                        <th>Capacity</th>
+                        <th>Status</th>
+                        <th>Available Space(s)</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>A1 </td>
+                        <td>3</td>
+                        <td>Partially Occupied</td>
+                        <td>2</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>A2 </td>
+                        <td>2</td>
+                        <td>Full</td>
+                        <td>0</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>A4 </td>
+                        <td>2</td>
+                        <td>Full</td>
+                        <td>0</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>A6 </td>
+                        <td>3</td>
+                        <td>Partially Occupied</td>
+                        <td>1</td>
+                        
+                      </tr> 
+                    </tbody>
+                    
+                      
+                </table>
+                
+                <!-- Table 2 -->
+                <table id="table2" class="display" width="100%">
+                    <caption><h3>Jordan Hostel</h3></caption>
+
+                    <thead>
+                        <tr>
+                        <th>Room</th>
+                        <th>Capacity</th>
+                        <th>Status</th>
+                        <th>Available Space(s)</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>D1 </td>
+                        <td>3</td>
+                        <td>Partially Occupied</td>
+                        <td>2</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>D2 </td>
+                        <td>2</td>
+                        <td>Full</td>
+                        <td>0</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>D4 </td>
+                        <td>2</td>
+                        <td>Full</td>
+                        <td>0</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>D6 </td>
+                        <td>3</td>
+                        <td>Partially Occupied</td>
+                        <td>1</td>
+                        
+                      </tr> 
+                    </tbody>
+                    
+                      
+                </table>
+                <!-- Table 3 -->
+                <table id="table3" class="display" width="100%">
+                    <caption><h3>Leanne Hostel</h3></caption>
+
+                    <thead>
+                        <tr>
+                        <th>Room</th>
+                        <th>Capacity</th>
+                        <th>Status</th>
+                        <th>Available Space(s)</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>B1 </td>
+                        <td>3</td>
+                        <td>Partially Occupied</td>
+                        <td>2</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>B2 </td>
+                        <td>2</td>
+                        <td>Full</td>
+                        <td>0</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>B4 </td>
+                        <td>2</td>
+                        <td>Full</td>
+                        <td>0</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>B6 </td>
+                        <td>3</td>
+                        <td>Partially Occupied</td>
+                        <td>1</td>
+                        
+                      </tr> 
+                    </tbody>
+                    
+                      
+                </table>
+                <!-- Table 4 -->
+                <table id="table4" class="display" width="100%">
+                    <caption><h3>Adelle Hostel</h3></caption>
+
+                    <thead>
+                        <tr>
+                        <th>Room</th>
+                        <th>Capacity</th>
+                        <th>Status</th>
+                        <th>Available Space(s)</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>C1 </td>
+                        <td>3</td>
+                        <td>Partially Occupied</td>
+                        <td>2</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>C2 </td>
+                        <td>2</td>
+                        <td>Full</td>
+                        <td>0</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>C4 </td>
+                        <td>2</td>
+                        <td>Full</td>
+                        <td>0</td>
+                        
+                      </tr>
+                      <tr>
+                        <td>C6 </td>
+                        <td>3</td>
+                        <td>Partially Occupied</td>
+                        <td>1</td>
+                        
+                      </tr> 
+                    </tbody>
+                    
+                      
+                </table>
+                
+            </section>
+        </div>
+
+    </main>
+    
+    
