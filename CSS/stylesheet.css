@@ -1,0 +1,158 @@
+body{
+	background: white;
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+header {
+	position: fixed;
+	background: #0A2239;
+	padding: 20px;
+	width: 100%;
+	height: 60px;
+}
+
+header #user_icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 100px;
+	margin-bottom: 10px;
+	margin-top: -40px;
+	float: right;
+}
+
+header h2{
+	color: #ccc;
+	margin-top: -30px;
+	margin-bottom: 20px;
+	font-size: 15px;
+	float: right;
+	margin-right: 35px;
+}
+
+
+.left-area h3 {
+	color: #fff;
+	margin-top: -25px;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: 900;
+}
+
+.left-area span{
+	color: #1DC4E7;
+}
+
+.logout_btn {
+	padding: 5px;
+	background: #19b3d3;
+	text-decoration: none;
+	float: right;
+	margin-top: -40px;
+	margin-right: 120px;
+	border-radius: 2px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	transition: 0.5s;
+	transition-property: background;
+}
+
+.logout_btn:hover {
+	background: #0d9dbb;
+}
+
+.sidebar{
+	background: #0f3457;
+	margin-top: 60px;
+	padding-top: 30px;
+	position: fixed;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	transition-property: left;
+}
+
+.sidebar .profile_image{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	margin-bottom: 10px;
+}
+
+.sidebar h4{
+	color: #ccc;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.sidebar a {
+	color: #fff;
+	display: inline-block;
+	width: 100%;
+	line-height: 60px;
+	text-decoration: none;
+	padding-left: 40px;
+	box-sizing: border-box;
+	transition:0.5s;
+	transition-property: background;
+}
+
+.sidebar a:hover {
+	background: #19b3d3;
+}
+
+.sidebar i {
+	padding-right: 10px;
+}
+
+label #sidebar_btn {
+	z-index: 1;
+	color: #fff;
+	position: fixed;
+	cursor: pointer;
+	left: 300px;
+	font-size: 20px;
+	margin:-15px 0;
+	transition: 0.5s;
+	transition-property: color;
+}
+
+label #sidebar_btn:hover {
+	color: #19b3d3;
+}
+
+#check:checked ~ .sidebar {
+	left: -190px;
+}
+
+#check:checked ~ .sidebar a span{
+	display: none;
+}
+
+#check:checked ~.sidebar a {
+	font-size: 20px;
+	margin-left: 170px;
+	width: 80px;
+}
+
+.content{
+	margin-left: 250px;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	transition: 0.5s;
+}
+
+#check:checked ~ .content{
+	margin-left: 60px;
+}
+
+#check {
+	display: none;
+}
+
+#school_pic {
+	background: url("../images/school.jpeg") no-repeat top;
+}
