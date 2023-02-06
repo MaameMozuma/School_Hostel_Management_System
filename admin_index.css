@@ -50,6 +50,7 @@ body{
 
 
 .nav_links li a{
+
   text-decoration: none;
   color: white;
 
@@ -83,6 +84,10 @@ body{
 
 .navtext{
     color: white;
+}
+
+.nav_links{
+  list-style: none;
 }
 
 .boxes{

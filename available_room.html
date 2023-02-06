@@ -20,46 +20,51 @@
 
 <body>
     <div id="page">
-        <nav>
-        <p class="navtext"> Main</p>
-        
-        <ul class="nav_links">
-            <li><a href="admin_index.html"> Dashboard</a></li>
-            <br>
-            <li><a href="stud_list.html">Student List</a></li>
-            <br>
-            <li><a href="cleaner.html">Cleaner Schedule</a></li>
-            <br>
-            <li><a href="available_room.html">Room Availability</a></li>
-            <br>  
-    
-        </ul>
-        
-
-        <!-- <p class="navtext"> Hostels</p>
-        
-        <ul class="nav_links">
-            <li><a href="">Hostel List</a></li>
-            <br>
-            <li><a href="">Room Allocation</a></li>
-        </ul> -->
-        
-
-
-    </nav>
-    <main>
-        <div id="top_nav">
-            <img id="nav_icon" src="navigation-bar.png">
-            <p>random</p>
+      <div id="top_nav">
+        <!-- <img id="nav_icon" src="navigation-bar.png"> -->
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left-area">
+            <h3>Bayview <span>Hostels</span></h3>
+        </div>
+        <div class="right-area">
+            <a href="#" class="logout_btn">Logout</a>
             <img id="user_icon" src="user.png">
         </div>
+      </div>
+    <div id="container">
+
+        <nav class="sidebar">
+            <center>
+                <img src="person.jpeg" class="profile_image" alt="">
+                <h4>Admin</h4>
+            </center>
+        
+            <ul class="nav_links">
+                <li><a href="admin_index.html"> Dashboard</a></li>
+                <br>
+                <li><a href="stud_list.html">Student List</a></li>
+                <br>
+                <li><a href="cleaner.html">Cleaner Schedule</a></li>
+                <br>
+                <li><a href="available_room.html">Room Availability</a></li>
+                <br>  
+        
+            </ul>
+              
+    
+    
+        </nav>
+      <main>
+          
         <div id="content">
             <h2>Room Availability</h2>
             <section id="info_boxes">
                 <div class="info">
                     <span class="head"> Nicole Hostel</span>
                     <span class="details">Deets</span>
-                    <span class="bottom"> See Avalability
+                    <span class="bottom"> See Availability
                         <!-- <span><i class="fa-regular fa-caret-down"></i></span> -->
                         <span><a href="#" onclick= 'showTable(1)'><img id="arrow" src="down_arrow.png"></a></span>
 
@@ -68,7 +73,7 @@
                 <div class="info">
                     <span class="head"> Jordan Hostel</span>
                     <span class="details">Deets</span>
-                    <span class="bottom"> See Avalability
+                    <span class="bottom"> See Availability
                         <span><a href="#" onclick= 'showTable(2)'><img id="arrow" src="down_arrow.png"></a></span>
 
                     </span>
@@ -77,7 +82,7 @@
                 <div class="info">
                     <span class="head"> Leanne Hostel</span>
                     <span class="details">Deets</span>
-                    <span class="bottom"> See Avalability
+                    <span class="bottom"> See Availability
                         <span><a href="#" onclick= 'showTable(3)'><img id="arrow" src="down_arrow.png"></a></span>
                     </span>
 
@@ -86,13 +91,13 @@
                 <div class="info">
                     <span class="head"> Adelle Hostel</span>
                     <span class="details">Deets</span>
-                    <span class="bottom"> See Avalability
-                       <a href="#" onclick= 'showTable(4)'><img id="arrow" src="down_arrow.png"></a>
+                    <span class="bottom"> See Availability
+                        <a href="#" onclick= 'showTable(4)'><img id="arrow" src="down_arrow.png"></a>
                     </span>
     
                 </div>
             </section>
-            <section>
+            <section id="tables">
                 <table id="table1" class="display" width="100%">
                     <caption><h3>Nicole Hostel</h3></caption>
                     <thead>
@@ -105,7 +110,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                       <tr>
+                        <tr>
                         <td>A1 </td>
                         <td>3</td>
                         <td>Partially Occupied</td>
@@ -152,7 +157,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                       <tr>
+                        <tr>
                         <td>D1 </td>
                         <td>3</td>
                         <td>Partially Occupied</td>
@@ -198,7 +203,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                       <tr>
+                        <tr>
                         <td>B1 </td>
                         <td>3</td>
                         <td>Partially Occupied</td>
@@ -244,7 +249,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                       <tr>
+                        <tr>
                         <td>C1 </td>
                         <td>3</td>
                         <td>Partially Occupied</td>
@@ -278,8 +283,13 @@
                 </table>
                 
             </section>
-        </div>
+          </div>
+    
+      </main>
+  
+  </body>
+</html>
 
-    </main>
+  
     
     
