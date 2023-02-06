@@ -36,12 +36,11 @@ body{
   float: right;
   width: 30px;
   height: 40px;
-  padding: 10px 0;
+  border-radius: 2000px;
+  /* margin-bottom: 0px; */
+  /* padding: 10px 0; */
 }
 
-.left-area{
-  /* border: 2px solid red; */
-}
   
 .left-area h3 {
   padding-left:20px ;
@@ -57,7 +56,11 @@ body{
   }
 
   .right-area{
-
+    margin-right: 20px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .sidebar{
@@ -104,29 +107,28 @@ body{
     padding-right: 10px;
     }
   
-  #sidebar{
-      margin: 0;
-      padding: 0;
-      width: 200px;
-      height: 1000px;
-      background-color: #000000;
-      padding-right: 20px;
-      /* position: fixed; */
-      /* height: 100%; */
-      /* overflow: auto; */
+
+.logout_btn {
+  padding: 5px;
+  /* padding-top: ; */
+  background: #19b3d3;
+  text-decoration: none;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  /* margin-right: 120px; */
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.5s;
+  transition-property: background;
   }
   
-  
-  
-  #sidebar_links li a{
-    text-decoration: none;
-    color: white;
-  
+  .logout_btn:hover {
+  background: #0d9dbb;
   }
 
-  #sidebartext{
-    color: white;
-}
 
   main{
     display: flex;
@@ -135,7 +137,6 @@ body{
   }
 
   #content{
-    /* margin-left: 200px; */
     padding: 1px 16px;
     height: 1000px;
     

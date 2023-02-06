@@ -1,31 +1,29 @@
 body{
+  /* display: flex; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+ul{
+  list-style: none;
+}
+
 #page{
   display: flex;
-  flex-direction: column;
 }
-
-#container{
-  display: flex;
-  flex-direction: row;
-}
-
 
 #top_nav{
-    background-color: #0A2239;
-    margin: auto;
-    height: 70px;
-    /* display: flex; */
-     /* margin-left: px;  */
-    width: 100%;
-    /* text-align: center; */
-    /* justify-content: space-between; */
-    
-  }
+  padding: 0;
+  background-color: #0A2239;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
   
 #top_nav #nav_icon{
   float: left;
@@ -37,34 +35,9 @@ body{
   float: right;
   width: 30px;
   height: 40px;
-  padding: 10px 0;
+  border-radius: 2000px;
 }
 
-nav{
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    height: 1000px;
-    background-color: #000000;
-    padding-right: 20px;
-    
-}
-
-
-
-.nav_links li a{
-  text-decoration: none;
-  color: white;
-
-}
-
-.navtext{
-  color: white;
-}
-
-.nav_links{
-list-style: none;
-}
 
 .sidebar{
 background: #0f3457;
@@ -139,32 +112,32 @@ font-weight: 900;
 color: #1DC4E7;
 }
 
+.right-area{
+  /* border: 2px solid red; */
+  margin-right: 20px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .logout_btn {
-padding: 5px;
-background: #19b3d3;
-text-decoration: none;
-float: right;
-margin-top: -40px;
-margin-right: 120px;
-border-radius: 2px;
-font-size: 15px;
-font-weight: 600;
-color: #fff;
-transition: 0.5s;
-transition-property: background;
+  padding: 5px;
+  background: #19b3d3;
+  text-decoration: none;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.5s;
+  transition-property: background;
 }
 
 .logout_btn:hover {
 background: #0d9dbb;
-}
-
-#user_icon {
-width: 30px;
-height: 30px;
-border-radius: 100px;
-margin-bottom: 10px;
-margin-top: -40px;
-float: right;
 }
 
 
@@ -177,10 +150,7 @@ main{
 #content{
   /* margin-left: 200px; */
   padding: 1px 16px;
-  /* height: 1000px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 1000px;
   
 }
 
@@ -243,6 +213,7 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  
 
 }
 
@@ -251,6 +222,7 @@ main{
     display: none;
     /* width: 100%; */
     margin: auto;
+    
 }
 
 

@@ -12,30 +12,28 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
     <script src="available_room.js"> </script>
-    <script src="https://use.fontawesome.com/b23b74413a.js"></script>
 
 
 
 </head>
 
 <body>
+  <div id="top_nav">
+    <!-- <img id="nav_icon" src="navigation-bar.png"> -->
+    <!-- <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label> -->
+    <div class="left-area">
+        <h3>Bayview <span>Hostels</span></h3>
+    </div>
+    <div class="right-area">
+        <img id="user_icon" src="person.jpeg">
+        <a href="#" class="logout_btn">Logout</a>
+    </div>
+</div>
     <div id="page">
-      <div id="top_nav">
-        <!-- <img id="nav_icon" src="navigation-bar.png"> -->
-        <label for="check">
-            <i class="fas fa-bars" id="sidebar_btn"></i>
-        </label>
-        <div class="left-area">
-            <h3>Bayview <span>Hostels</span></h3>
-        </div>
-        <div class="right-area">
-            <a href="#" class="logout_btn">Logout</a>
-            <img id="user_icon" src="user.png">
-        </div>
-      </div>
-    <div id="container">
 
-        <nav class="sidebar">
+        <div class="sidebar">
             <center>
                 <img src="person.jpeg" class="profile_image" alt="">
                 <h4>Admin</h4>
@@ -55,7 +53,8 @@
               
     
     
-        </nav>
+        </div>
+        
       <main>
           
         <div id="content">
@@ -286,6 +285,7 @@
           </div>
     
       </main>
+    </div>
   
   </body>
 </html>
