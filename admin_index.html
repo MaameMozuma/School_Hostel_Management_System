@@ -11,74 +11,74 @@
     </head>
     <body>
         
-    <div id="top_nav">
-        <!-- <img id="nav_icon" src="navigation-bar.png"> -->
-        <!-- <label for="check">
-            <i class="fas fa-bars" id="sidebar_btn"></i>
-        </label> -->
-        <div class="left-area">
-            <h3>Bayview <span>Hostels</span></h3>
+        <div class="top_navbar">
+            <div class="menu">
+                
+                <h3>Bayview <span>Hostels</span>
+                    
+                    <button class="hamburger" onclick="openNav()">☰ </button>  
+                </h3>
+                
+            </div>
         </div>
-        <div class="right-area">
-            <img id="user_icon" src="person.jpeg">
-            <a href="#" class="logout_btn">Logout</a>
-        </div>
-    </div>
-    <div id="page">
         
-        <div class="sidebar">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <center>
                 <img src="person.jpeg" class="profile_image" alt="">
                 <h4>Admin</h4>
             </center>
-            <!-- <p class="navtext"> Main</p> -->
             
             <ul class="nav_links">
-                <li><a href="admin_index.html"> Dashboard</a></li>
+                <li><img src = "home.png" ><a href="admin_index.html"> Dashboard</a></li>
                 <br>
-                <li><a href="stud_list.html">Student List</a></li>
+                <li><img src = "list-text.png" ><a href="stud_list.html">Student List</a></li>
                 <br>
-                <li><a href="cleaner.html">Cleaner Schedule</a></li>
+                <li><img src = "sweeping.png" ><a href="cleaner.html">Cleaner Schedule</a></li>
                 <br>
-                <li><a href="available_room.html">Room Availability</a></li>
-                <br>  
+                <li><img src = "bed.png" ><a href="available_room.html">Room Availability</a></li>
+                <br>   
+                <a href="#" class="logout_btn">Logout</a>
                 
             </ul>
-        
-            
-            
-            
         </div>
-        
-            <div id="content">
-                <h2>Welcome, Admin!</h2>
-                
-                <section class="boxes">
-                    <div class="row">
-                        <div class="box" id="box1">
-                            <p class="box_text">Registered Students</p>
-                            <p class="number">20</p>
-                        </div>
-                        <div class="box" id="box2">
-                            <p class="box_text">Available Spaces</p>
-                            <p class="number">5</p>
-                        </div>
-                        <div class="box" id="box3">
-                            <p class="box_text">Total Number of Rooms</p>
-                            <p class="number">30</p>
-                        </div>
+        <div id="main">
+            <h2>Welcome<span id="head">, Admin!</span></h2>
+            
+            <section class="boxes">
+                <div class="row">
+                    <div class="box" id="box1">
+                        <p class="box_text">Registered Students</p>
+                        <p class="number">20</p>
                     </div>
-                    <div id="chart_space"><canvas id="barChart"></canvas></div> 
-                </section>
-            </div>
-    
+                    <div class="box" id="box2">
+                        <p class="box_text">Available Spaces</p>
+                        <p class="number">5</p>
+                    </div>
+                    <div class="box" id="box3">
+                        <p class="box_text">Total Number of Rooms</p>
+                        <p class="number">30</p>
+                    </div>
+                </div>
+                <div id="chart_space"><canvas id="barChart"></canvas></div> 
+            </section>
         </div>
-    
         
         
-    
+        
         
         
         <script src="admin_index.js"></script>
+        <script>
+            function openNav() {
+              document.getElementById("mySidebar").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+            }
+            
+            function closeNav() {
+              document.getElementById("mySidebar").style.width = "0";
+              document.getElementById("main").style.marginLeft= "0";
+            }
+            </script>
     </body>
 </html>
