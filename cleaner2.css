@@ -44,6 +44,12 @@ body {
 .top_navbar .hamburger:hover{
 	color: #007dc3;
 }
+center h4{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+  font-weight: bold;
+}
+
 .menu h3 {
 
   padding-left:10px ;

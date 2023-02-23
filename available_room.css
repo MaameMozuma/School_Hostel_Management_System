@@ -92,6 +92,10 @@ ul{
   font-size: 17px;
 
 }
+center h4{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+}
 .sidebar h4{
     color: #ccc;
     margin-top: 0;

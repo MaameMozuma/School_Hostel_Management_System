@@ -76,6 +76,11 @@ ul{
   background: #0d9dbb;
 	
 }
+#user{
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-size: larger !important;
+  font-weight: bold;
+}
 .sidebar {
   font-family:Georgia, 'Times New Roman', Times, serif;
   height: 100%;

@@ -57,7 +57,8 @@ ul{
   }
 
   .logout_btn {
-	
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
 	margin-top: 20px;
 	margin-bottom: 10px;
 	/* border-radius: 2px; */
@@ -71,6 +72,11 @@ ul{
   .logout_btn:hover {
   	background: #0d9dbb;
 	
+  }
+
+  center h4{
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-size: larger !important;
   }
 .sidebar {
   height: 100%;

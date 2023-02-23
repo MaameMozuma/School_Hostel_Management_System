@@ -25,9 +25,9 @@
     
             }   
     /* this is the styling for both of the input fields */
-    input[type=email], input[type=password], input[type=text] {   
+    input[type=email], input[type=password], input[type=text], select {   
             width: 90%;   
-            height: 65px;
+            height: 55px;
             margin: 15px 10px 5px 20px;  
             padding: 15px 40px;   
             display: inline-block;   
@@ -61,10 +61,10 @@
         
     .container {   
         
-        top: 30%;
+        top: 25%;
         left: 50%;
-        width: 27em;
-        height: 40em;
+        width: 30em;
+        height: 44em;
         margin-top: -9em;
         margin-left: -15em;
         border: 1px solid #666;
@@ -194,6 +194,13 @@
             <input type="text" placeholder="First Name" name="fname" id = "fname">  
             <br>
             <input type="text" placeholder="Last Name" name="lname" id = "lname">  
+            <br>
+            <select name="gender" id="gender">
+                <option value="">Gender</option> <!--Placeholder-->
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+            <input type="text" placeholder="Telephone Number" name="tel" id = "tel">  
             <br>
             <input type="email" placeholder="Email" name="email" id = "email">  
             <br>
