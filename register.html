@@ -34,6 +34,8 @@
             border: none;            
             background-color: #F3F3F3 ;
             box-sizing: border-box; 
+            /* color: #8b8888 ; */
+
             
         
         }
@@ -58,7 +60,20 @@
         background-position: 95%;
     }
     
-        
+    #tel{
+        background-image: url("phone-call.png"); 
+        background-repeat: no-repeat;
+        background-size: 5%;
+        background-position: 95%;
+    }
+    
+    #fname, #lname{
+        background-image: url("user1.png"); 
+        background-repeat: no-repeat;
+        background-size: 5%;
+        background-position: 95%;
+    }
+
     .container {   
         
         top: 25%;
@@ -74,14 +89,19 @@
 
     }   
     
+    select:invalid{
+        color: #8b8888 ;
+
+    }
+
     .toptext{
         text-align: center;
         font-size: 10px;
-        color: #8b8888 ;
         margin: auto;
     }
-
+    
     .bottomtext{
+        color: #8b8888 ;
         text-align: center;
         font-size: smaller;
         margin-top: 2px;
@@ -129,7 +149,7 @@
         height: 100%;
         left: -40px;
         opacity: 0;
-        position: absolute;
+        position: fixed;
         top: -20px;
         width: 100%;
         z-index: 0;
@@ -190,12 +210,12 @@
             <!-- <div class ="icondiv"><img class = "icon" src="bxs_leaf.svg"/></div> -->
             
             <h2 class="header">Bayview <span style="color: #0A2239;">Hostels</span></h2>  
-            <p class="toptext">Lorem ipsum dolor sit amet consectetur adipisicing elit. in voluptate dolore labore, <br>quo sequi inventore optio autem nulla</p> 
+            <!-- <p class="toptext">Lorem ipsum dolor sit amet consectetur adipisicing elit. in voluptate dolore labore, <br>quo sequi inventore optio autem nulla</p>  -->
             <input type="text" placeholder="First Name" name="fname" id = "fname">  
             <br>
             <input type="text" placeholder="Last Name" name="lname" id = "lname">  
             <br>
-            <select name="gender" id="gender">
+            <select name="gender" id="gender" required>
                 <option value="">Gender</option> <!--Placeholder-->
                 <option value="M">M</option>
                 <option value="F">F</option>
@@ -210,6 +230,7 @@
             
             <!-- <p class="right">Forgot password? </p>   -->
             <button><a href="admin_index.html" style="text-decoration: none; color: white;">Register</a></button> 
+            <p class="bottomtext">Already have an account? <a href="login.php">Log in</a></p>
             
 
             <!-- <p class="bottomtext">Don't have an account? Sign up <a href="#"> here </a> </p>   -->
