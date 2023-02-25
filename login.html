@@ -190,7 +190,7 @@
         <figure></figure>
         <figure></figure>
     </div>   
-    <form id="myForm">  
+    <form id="myForm" action="login_proc.php" method="POST">  
         <div class="container">
             <!-- <div class ="icondiv"><img class = "icon" src="bxs_leaf.svg"/></div> -->
             
@@ -202,11 +202,12 @@
             <input type="password" placeholder="Password" name="password" id = "password"> 
             <br>
             <!-- <p class="right">Forgot password? </p>   -->
-            <button style="text-decoration: none; color: white;"><a href="user_index.html" style="text-decoration: none; color: white;">Log In</a></button> 
+            <button style="text-decoration: none; color: white;" name="login" type="submit"><a href="user_index.html" style="text-decoration: none; color: white;">Log In</a></button> 
             
 
             <!-- <p class="bottomtext">Don't have an account? Sign up <a href="#"> here </a> </p>   -->
         </div>   
-    </form>    
+    </form>
+
 </body>     
 </html>  
