@@ -50,11 +50,13 @@ if (isset($_POST['login']))
             $_SESSION["Number"] = $result_number ;
             $_SESSION["Tel"] = $result_tel ;
             $_SESSION["Email"] = $result_email ;
+            $_SESSION["Role"] = $result_role ;
+            $_SESSION["logged_in"] = true;
             
             if($result_role == 0){
-                header("Location: admin_index.html");
+                header("Location: admin_index.php");
             }else{
-                header("Location: user_index.html");
+                header("Location: user_index.php");
             }
  
 		}else{
