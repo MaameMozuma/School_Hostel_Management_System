@@ -1,5 +1,4 @@
 body{
-  /* display: flex; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,7 +7,6 @@ body{
 
 ul{
   list-style: none;
-  /* font-family:Georgia, 'Times New Roman', Times, serif; */
 
 }
 
@@ -269,11 +267,7 @@ h2{
 
 #tables{
   display: flex;
-  
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* border: 2px solid greenyellow; */
+
   
 }
 
@@ -281,15 +275,19 @@ h2{
  
     padding-top: 40px;
     display: none;
-    /* width: 100%; */
     margin: auto;
-    /* border: 2px solid red; */
+    text-align: center;
+    
     
 }
 
+caption{
+  font-size: larger;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: #0A2239;
+}
 
 #table1 td, #table2 td, #table3 td, #table4 td, #table1 th, #table2 th, #table3 th, #table4 th{
-      border: 1px solid #0A2239;
       padding: 8px;
   }
 
