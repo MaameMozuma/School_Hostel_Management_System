@@ -10,6 +10,27 @@ ul{
   list-style: none;
 }
 
+select:invalid{
+  color: #8b8888 ;
+
+}
+
+#drop{
+  display: flex;
+  margin-bottom: 40px;
+}
+
+#year, #term{
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+#go{
+  margin-left: 40px;
+  height: 32px;
+  background: #0A2239;
+  color: white;
+  border-radius: 4px;
+}
 
 .top_navbar{
   position: fixed;
