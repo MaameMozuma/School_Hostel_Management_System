@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 23, 2023 at 09:46 PM
+-- Generation Time: Feb 28, 2023 at 06:40 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -77,7 +77,7 @@ CREATE TABLE `booking` (
   `term_id` int(11) NOT NULL,
   `year_id` int(11) NOT NULL,
   `booking_date` date NOT NULL,
-  `proof_of_payment` varbinary(1000) NOT NULL,
+  `proof_of_payment` varbinary(1000) DEFAULT NULL,
   `status` varchar(4) NOT NULL DEFAULT 'No'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -92,54 +92,82 @@ CREATE TABLE `cleaner` (
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `tel_no` varchar(15) NOT NULL,
-  `no_of_rooms` int(11) NOT NULL,
-  `cleaning_area` varchar(50) NOT NULL
+  `tel_no` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cleaner`
 --
 
-INSERT INTO `cleaner` (`worker_id`, `fname`, `lname`, `email`, `tel_no`, `no_of_rooms`, `cleaning_area`) VALUES
-(1, 'Davida', 'Samah', 'dsamah@gmail.com', '+222 5555-9087', 0, 'Haligah Kitchenette'),
-(2, 'Jocelyn', 'Dimas', 'joccyd@gmail.com', '+222 7943-5687', 0, 'Maatalla Kitchenette'),
-(3, 'Abele', 'Hayford', 'abel.hay@gmail.com', '+222 5230-8394', 0, 'Grounds'),
-(4, 'Lenny', 'Amor', 'lamor@gmail.com', '+222 2219-0184', 0, 'Abdi Kitchenette'),
-(5, 'Terry', 'White', 'whiteterry@gmail.com', '+222 7943-7348', 0, 'Niang Kitchenette'),
-(6, 'Diablo', 'Gonzalez', 'dgonzalez@gmail.com', '+222 8237-1824', 6, 'Abdi Ground Floor'),
-(7, 'Nikolas', 'Kennel', 'nikken@gmail.com', '+222 2374-9128', 6, 'Abdi First Floor'),
-(8, 'Smith', 'Williamson', 'smithwill@gmail.com', '+222 2343-2342', 6, 'Abdi Second Floor'),
-(9, 'Henry', 'Dangers', 'hdanger@gmail.com', '+222 2349-3294', 6, 'Abdi Third Floor'),
-(10, 'Jordyn', 'Tyson', 'jtyson@gmail.com', '+222 2833-3023', 6, 'Maatalla Ground Floor'),
-(11, 'Breada', 'Gabba', 'b.gabba@gmail.com', '+222 8201-3020', 6, 'Maatalla First Floor'),
-(12, 'Felicity', 'Baron', 'baron.fel@gmail.com', '+222 9075-2380', 6, 'Maatalla Second Floor'),
-(13, 'Samuella', 'Blankton', 'sammy.blank@gmail.com', '+222 8234-2302', 6, 'Maatalla Third Floor'),
-(14, 'Josephine', 'Baron', 'jbaron@gmail.com', '+222 3456-0987', 3, 'Haligah Ground Floor'),
-(15, 'Dorothie', 'Brown', 'dotty.brown@gmail.com', '+222 2343-4594', 3, 'Haligah Ground Floor'),
-(16, 'Bill', 'Bush', 'bbush@gmail.com', '+222 5680-9867', 3, 'Niang Ground Floor'),
-(17, 'Mardar', 'Mook', 'mook.mardar@gmail.com', '+222 2345-2346', 3, 'Niang Ground Floor'),
-(18, 'Maame', 'Lincoln', 'mamlincoln@gmail.com', '+222 9089-3247', 3, 'Haligah First Floor'),
-(19, 'Jonnie', 'Biden', 'jobiden@gmail.com', '+222 4379-6274', 3, 'Niang First Floor'),
-(20, 'Annabel', 'Nixon', 'annixon@gmail.com', '+222 5349-9854', 3, 'Haligah First Floor'),
-(21, 'Lorem', 'Ipsum', 'lorem.ipsum@gmail.com', '+222 5567-9854', 3, 'Niang First Floor'),
-(22, 'Leroya', 'Otis', 'leroy.otis@gmail.com', '+222 9449-0824', 3, 'Haligah Second Floor'),
-(23, 'Sica', 'Mbappe', 'sica.mbappe@gmail.com', '+222 5678-0923', 3, 'Haligah Second Floor'),
-(24, 'Benji', 'Opoku', 'b.opoku@gmail.com', '+222 3245-1820', 3, 'Niang Second Floor'),
-(25, 'Ahja', 'Rameed', 'ahrameed@gmail.com', '+222 3456-9120', 3, 'Niang Second Floor');
+INSERT INTO `cleaner` (`worker_id`, `fname`, `lname`, `email`, `tel_no`) VALUES
+(1, 'Davida', 'Samah', 'dsamah@gmail.com', '+222 5555-9087'),
+(2, 'Jocelyn', 'Dimas', 'joccyd@gmail.com', '+222 7943-5687'),
+(3, 'Abele', 'Hayford', 'abel.hay@gmail.com', '+222 5230-8394'),
+(4, 'Lenny', 'Amor', 'lamor@gmail.com', '+222 2219-0184'),
+(5, 'Terry', 'White', 'whiteterry@gmail.com', '+222 7943-7348'),
+(6, 'Diablo', 'Gonzalez', 'dgonzalez@gmail.com', '+222 8237-1824'),
+(7, 'Nikolas', 'Kennel', 'nikken@gmail.com', '+222 2374-9128'),
+(8, 'Smith', 'Williamson', 'smithwill@gmail.com', '+222 2343-2342'),
+(9, 'Henry', 'Dangers', 'hdanger@gmail.com', '+222 2349-3294'),
+(10, 'Jordyn', 'Tyson', 'jtyson@gmail.com', '+222 2833-3023'),
+(11, 'Breada', 'Gabba', 'b.gabba@gmail.com', '+222 8201-3020'),
+(12, 'Felicity', 'Baron', 'baron.fel@gmail.com', '+222 9075-2380'),
+(13, 'Samuella', 'Blankton', 'sammy.blank@gmail.com', '+222 8234-2302'),
+(14, 'Josephine', 'Baron', 'jbaron@gmail.com', '+222 3456-0987'),
+(15, 'Dorothie', 'Brown', 'dotty.brown@gmail.com', '+222 2343-4594'),
+(16, 'Bill', 'Bush', 'bbush@gmail.com', '+222 5680-9867'),
+(17, 'Mardar', 'Mook', 'mook.mardar@gmail.com', '+222 2345-2346'),
+(18, 'Maame', 'Lincoln', 'mamlincoln@gmail.com', '+222 9089-3247'),
+(19, 'Jonnie', 'Biden', 'jobiden@gmail.com', '+222 4379-6274'),
+(20, 'Annabel', 'Nixon', 'annixon@gmail.com', '+222 5349-9854'),
+(21, 'Lorem', 'Ipsum', 'lorem.ipsum@gmail.com', '+222 5567-9854'),
+(22, 'Leroya', 'Otis', 'leroy.otis@gmail.com', '+222 9449-0824'),
+(23, 'Sica', 'Mbappe', 'sica.mbappe@gmail.com', '+222 5678-0923'),
+(24, 'Benji', 'Opoku', 'b.opoku@gmail.com', '+222 3245-1820'),
+(25, 'Ahja', 'Rameed', 'ahrameed@gmail.com', '+222 3456-9120');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cleaner_room`
+-- Table structure for table `cleaner_schedule`
 --
 
-CREATE TABLE `cleaner_room` (
+CREATE TABLE `cleaner_schedule` (
   `cleaner_id` int(11) NOT NULL,
-  `room_id` int(11) NOT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL
+  `cleaning_area` varchar(50) NOT NULL,
+  `no_of_rooms` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cleaner_schedule`
+--
+
+INSERT INTO `cleaner_schedule` (`cleaner_id`, `cleaning_area`, `no_of_rooms`) VALUES
+(1, 'Haligah Kitchenette ', 0),
+(2, 'Maatalla Kitchenette ', 0),
+(3, 'Grounds', 0),
+(4, 'Abdi Kitchenette', 0),
+(5, 'Niang Kitchenette', 0),
+(6, 'Abdi Ground Floor', 6),
+(7, 'Abdi First Floor', 6),
+(8, 'Abdi Second Floor', 6),
+(9, 'Abdi Third Floor', 6),
+(10, 'Maatalla Ground Floor', 6),
+(11, 'Maatalla First Floor', 6),
+(12, 'Maatalla Second Floor', 6),
+(13, 'Maatalla Third Floor', 6),
+(14, 'Haligah Ground Floor', 3),
+(15, 'Haligah Ground Floor', 3),
+(16, 'Niang Ground Floor', 3),
+(17, 'Niang Ground Floor', 3),
+(18, 'Haligah First Floor', 3),
+(19, 'Niang First Floor', 3),
+(20, 'Haligah First Floor', 3),
+(21, 'Niang First Floor', 3),
+(22, 'Haligah Second Floor', 3),
+(23, 'Haligah Second Floor', 3),
+(24, 'Niang Second Floor', 3),
+(25, 'Niang Second Floor', 3);
 
 -- --------------------------------------------------------
 
@@ -164,7 +192,7 @@ CREATE TABLE `hostel_user` (
 
 INSERT INTO `hostel_user` (`user_id`, `first_name`, `last_name`, `user_tel`, `user_email`, `user_gender`, `user_password`, `user_role`) VALUES
 (1, 'Abdul', 'Wakeeb', '+222 4567-0239', 'abdul.wakeeb@gmail.com', 'M', 'Awakeeb@gr8', 0),
-(2, 'Francoi', 'Rivère', '+222 4589-0239', 'francoir@gmail.com', 'F', 'frRiv3r!', 0);
+(2, 'Francoi', 'Rivère', '+222 4589-0239', 'francoir@gmail.com', 'F', 'frRiv3r!', 0),
 
 -- --------------------------------------------------------
 
@@ -312,8 +340,11 @@ ALTER TABLE `block`
 -- Indexes for table `booking`
 --
 ALTER TABLE `booking`
+  ADD PRIMARY KEY (`booking_id`),
+  ADD KEY `student_id` (`student_id`),
   ADD KEY `room_id` (`room_id`),
-  ADD KEY `student_id` (`student_id`);
+  ADD KEY `term_id` (`term_id`),
+  ADD KEY `year_id` (`year_id`);
 
 --
 -- Indexes for table `cleaner`
@@ -324,11 +355,10 @@ ALTER TABLE `cleaner`
   ADD UNIQUE KEY `tel_no` (`tel_no`);
 
 --
--- Indexes for table `cleaner_room`
+-- Indexes for table `cleaner_schedule`
 --
-ALTER TABLE `cleaner_room`
-  ADD KEY `cleaner_id` (`cleaner_id`),
-  ADD KEY `room_id` (`room_id`);
+ALTER TABLE `cleaner_schedule`
+  ADD UNIQUE KEY `cleaner_id` (`cleaner_id`);
 
 --
 -- Indexes for table `hostel_user`
@@ -369,6 +399,12 @@ ALTER TABLE `block`
   MODIFY `block_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `cleaner`
 --
 ALTER TABLE `cleaner`
@@ -400,14 +436,16 @@ ALTER TABLE `school_term`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `hostel_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `hostel_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_3` FOREIGN KEY (`term_id`) REFERENCES `school_term` (`term_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_4` FOREIGN KEY (`year_id`) REFERENCES `academic_year` (`year_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `cleaner_room`
+-- Constraints for table `cleaner_schedule`
 --
-ALTER TABLE `cleaner_room`
-  ADD CONSTRAINT `cleaner_room_ibfk_1` FOREIGN KEY (`cleaner_id`) REFERENCES `cleaner` (`worker_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `cleaner_room_ibfk_2` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `cleaner_schedule`
+  ADD CONSTRAINT `cleaner_schedule_ibfk_1` FOREIGN KEY (`cleaner_id`) REFERENCES `cleaner` (`worker_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `room`
