@@ -6,7 +6,7 @@ var myBarChart = new Chart(bar, {
     labels: [ "Female", "Male"],
     datasets: [{
       label: 'Gender %',
-      data: [12, 19, 3, 5, 2, 3],
+      data: [6, 50],
       backgroundColor: [
         'rgba(54, 162, 235, 0.2)',
         'rgba(75, 192, 192, 0.2)',

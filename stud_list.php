@@ -65,19 +65,20 @@
         
         <div id="drop">
             <p>Select a term and academic year</p>
-            <select name="" id="year" required>
-                <option value="">Academic Year</option>
-                <option value="">2020/2021</option>
-                <option value="">2021/2022</option>
-                <option value="">2022/2023</option>
-            </select>
-            <select name="" id="term" required>
-                <option value="">Term</option>
-                <option value="">Term 1</option>
-                <option value="">Term 2</option>
-                <option value="">Term 3</option>
-            </select>
-            <button id="go">Go</button>
+                <form method="POST" name="<?php echo $_SERVER['PHP_SELF'];?>">
+                    <select name="Academic_Year" id="year" required>
+                        <!-- <option value="">Academic Year</option> -->
+                        <option value="2020/2021">2020/2021</option>
+                        <option value="2021">2021/2022</option>
+                        <option value="">2022/2023</option>
+                    </select>
+                    <select name="Term" id="term" required>
+                        <option value="Term 1">Term 1</option>
+                        <option value="Term 2">Term 2</option>
+                        <option value="Term 3">Term 3</option>
+                    </select>
+                <form>
+            <button id="go" type="submit">Go</button>
         </div>
     
         <section>
@@ -87,15 +88,44 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
-                        <th>Year</th>
                         <th>Room</th>
                         <th>Hostel</th>
                     </tr>
 
                 </thead>
                 <tbody>
+                    <?php
+                        if($_SERVER["REQUEST_METHOD"] == "POST"){
+                            include('config.php');
 
-                    <tr>
+                            $year = $_REQUEST['Academic_Year'];
+                            $term = $_REQUEST['Term'];
+
+                            $stud_sql = "SELECT CONCAT(`first_name`, ' ', `last_name`) 'Name', `user_email` 'Email', 
+                                        `user_tel` 'Phone_Number',  `room_name` 'Room',  `block_name` 'Hostel'
+                                        FROM ((booking INNER JOIN hostel_user ON booking.   student_id = hostel_user.  user_id) 
+                                        INNER JOIN room on booking. room_id = room.room_id) INNER JOIN block on room.block_id =  block.block_id
+                                        WHERE year_id IN (SELECT academic_year.year_id FROM academic_year WHERE a_year = '$year')
+                                        AND term_id IN (SELECT school_term.term_id FROM school_term WHERE term = '$term')";
+
+                            // $stud_sql = "SELECT * FROM hostel_user   WHERE first_name = 'Abdul'";
+
+                            $stud_result = $conn->query($stud_sql);
+
+                            while($stud_row = $stud_result->fetch_assoc()){
+                                echo "<tr>
+                                      <td>$stud_row[Name]</td>
+                                      <td>$stud_row[Email]</td>
+                                      <td>$stud_row[Phone_Number]</td>
+                                      <td>$stud_row[Room]</td>
+                                      <td>$stud_row[Hostel]</td>
+                                      </tr>
+                                      ";
+                                    }
+                        }
+                    ?>
+
+                    <!-- <tr>
                         <td>Alfreds Futterkiste</td>
                         <td>alfiefutter@gmail.com</td>
                         <td>+233 456 2473 954</td>
@@ -126,7 +156,7 @@
                         <td>Senior</td>
                         <td>J8</td>
                         <td>Dufie Annex</td>
-                        </tr>
+                        </tr> -->
                 </tbody>
                     
             </table>

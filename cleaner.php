@@ -79,38 +79,29 @@
                         </tr>
                         </thead>
                         <tbody>
-                           <tr>
-                            <td>Alfreds </td>
-                            <td>Peters</td>
-                            <td>Abdi Ground Floor</td>
-                            <td>3</td>
-                            <td>+233 456 2473 954</td>
-                      
-                          </tr>
-                          <tr>
-                            <td>Felicity </td>
-                            <td>Baron</td>
-                            <td>Abdi Second Floor</td>
-                            <td>3</td>
-                            <td>+233 456 7352 954</td>
-                            
-                          </tr>
-                          <tr>
-                            <td>David </td>
-                            <td>Maspah</td>
-                            <td>Niang First Floor</td>
-                            <td>2</td>
-                            <td>+233 352 2473 293</td>
-                            
-                          </tr>
-                          <tr>
-                            <td>Henry </td>
-                            <td>Danger</td>
-                            <td>Lower Court</td>
-                            <td>0</td>
-                            <td>+233 432 9693 954</td>
-                            
-                          </tr> 
+                          <?php
+
+                            include('config.php');
+
+                            // Query Cleaners
+                            $cleaner_sql = "SELECT `fname`, `lname`, `cleaning_area`, `no_of_rooms`, `tel_no`
+                                             FROM `cleaner` 
+                                             JOIN `cleaner_schedule` 
+                                             ON cleaner.worker_id = cleaner_schedule.cleaner_id;";
+
+                            $cleaner_result = $conn->query($cleaner_sql);
+
+                            while($cleaner_row = $cleaner_result->fetch_assoc()){
+                              echo "<tr>
+                                    <td>$cleaner_row[fname]</td>
+                                    <td>$cleaner_row[lname]</td>
+                                    <td>$cleaner_row[cleaning_area]</td>
+                                    <td>$cleaner_row[no_of_rooms]</td>
+                                    <td>$cleaner_row[tel_no]</td>
+                                    </tr>
+                                    ";
+                                  }
+                        ?>  
                         </tbody>
                         
                           
